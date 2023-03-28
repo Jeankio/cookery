@@ -4,7 +4,7 @@ extension Recipe {
   static let backRecipes: [Recipe] = [
     //Recipe 1
     Recipe(recipeBasicInfo: RecipeBasicInfo(
-                            titulo: "Dad's Mashed Potatoes",
+                            titulo: "Puré de Papas",
                             descripcion: "Buttery salty mashed potatoes!",
                             cooker: "Josh",
                             category: .cena,
@@ -28,7 +28,7 @@ extension Recipe {
     
     // Recipe 2
     Recipe(recipeBasicInfo: RecipeBasicInfo(
-                            titulo: "Beet and Apple Salad",
+                            titulo: "Ensalada de Manzanas",
                             descripcion: "Light and refreshing summer salad made of beets, apples and fresh mint",
                             cooker: "Deb Szajngarten",
                             category: .almuerzo,
@@ -58,7 +58,7 @@ extension Recipe {
     
     //Recipe 3
     Recipe(recipeBasicInfo: RecipeBasicInfo(
-                            titulo: "Braised Beef Brisket",
+                            titulo: "Brisket a las brasas",
                             descripcion: "Slow cooked brisket in a savory braise that makes an amazing gravy.",
                             cooker: "Deb Szajngarten",
                             category: .cena,
@@ -87,6 +87,138 @@ extension Recipe {
                 Preparacion(paso: "Add the wine mixture, return the beef to the pot, add the chicken stock until it come 1/2 way up the beef", opcional: false),
                 Preparacion(paso: "Close the lid and bake at 250 until fork tender (4-6 hrs)", opcional: false)
                ]
-    )
-  ]
+    ),
+    
+    //Recipe 4
+    Recipe(recipeBasicInfo: RecipeBasicInfo(
+                            titulo: "Pollo a la parmesana",
+                            descripcion: "Slow cooked brisket in a savory braise that makes an amazing gravy.",
+                            cooker: "Deb Szajngarten",
+                            category: .cena,
+                            foodtype: .sinRestricciones),
+           ingredientes: [
+                Ingrediente(nombre: "Brisket", cantidad: 1815, medida: .g),
+                Ingrediente(nombre: "Large red onion", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Garlic, minced", cantidad: 6, medida: .not),
+                Ingrediente(nombre: "Large Carrot", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Parsnip", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Stalks Celery", cantidad: 3, medida: .not),
+                Ingrediente(nombre: "Caul, Duck, or Chicken Fat", cantidad: 3, medida: .tbs),
+                Ingrediente(nombre: "Bay Leaves", cantidad: 2, medida: .not),
+                Ingrediente(nombre: "Apple Cider Vinegar", cantidad: 0.33, medida: .cups),
+                Ingrediente(nombre: "Red Wine", cantidad: 1, medida: .cups),
+                Ingrediente(nombre: "Jar/Can of Tomato Paste", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Spoonful of Honey", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Chicken Stock", cantidad: 30, medida: .ml),
+               ],
+           
+           preparaciones:  [
+                Preparacion(paso: "In a small bowl, combine the honey, tomato paste and wine, and mix into paste", opcional: false),
+                Preparacion(paso: "In an oval dutch oven, melt the fat over a medium to high heat.", opcional: false),
+                Preparacion(paso: "Sear the brisket on both side then remove the heat", opcional: false),
+                Preparacion(paso: "Add a bit more fat or vegetable oil and sear the vegetables until the onions become translucent", opcional: false),
+                Preparacion(paso: "Add the wine mixture, return the beef to the pot, add the chicken stock until it come 1/2 way up the beef", opcional: false),
+                Preparacion(paso: "Close the lid and bake at 250 until fork tender (4-6 hrs)", opcional: false)
+               ]
+    ),
+    
+    //Recipe 5
+    Recipe(recipeBasicInfo: RecipeBasicInfo(
+                            titulo: "Salchipapa costeña",
+                            descripcion: "Slow cooked brisket in a savory braise that makes an amazing gravy.",
+                            cooker: "Deb Szajngarten",
+                            category: .cena,
+                            foodtype: .sinRestricciones),
+           ingredientes: [
+                Ingrediente(nombre: "Brisket", cantidad: 1815, medida: .g),
+                Ingrediente(nombre: "Large red onion", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Garlic, minced", cantidad: 6, medida: .not),
+                Ingrediente(nombre: "Large Carrot", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Parsnip", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Stalks Celery", cantidad: 3, medida: .not),
+                Ingrediente(nombre: "Caul, Duck, or Chicken Fat", cantidad: 3, medida: .tbs),
+                Ingrediente(nombre: "Bay Leaves", cantidad: 2, medida: .not),
+                Ingrediente(nombre: "Apple Cider Vinegar", cantidad: 0.33, medida: .cups),
+                Ingrediente(nombre: "Red Wine", cantidad: 1, medida: .cups),
+                Ingrediente(nombre: "Jar/Can of Tomato Paste", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Spoonful of Honey", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Chicken Stock", cantidad: 30, medida: .ml),
+               ],
+           
+           preparaciones:  [
+                Preparacion(paso: "In a small bowl, combine the honey, tomato paste and wine, and mix into paste", opcional: false),
+                Preparacion(paso: "In an oval dutch oven, melt the fat over a medium to high heat.", opcional: false),
+                Preparacion(paso: "Sear the brisket on both side then remove the heat", opcional: false),
+                Preparacion(paso: "Add a bit more fat or vegetable oil and sear the vegetables until the onions become translucent", opcional: false),
+                Preparacion(paso: "Add the wine mixture, return the beef to the pot, add the chicken stock until it come 1/2 way up the beef", opcional: false),
+                Preparacion(paso: "Close the lid and bake at 250 until fork tender (4-6 hrs)", opcional: false)
+               ]
+    ),
+    
+    //Recipe 6
+    Recipe(recipeBasicInfo: RecipeBasicInfo(
+                            titulo: "Mini tamales Tolimenses",
+                            descripcion: "Slow cooked brisket in a savory braise that makes an amazing gravy.",
+                            cooker: "Deb Szajngarten",
+                            category: .cena,
+                            foodtype: .sinRestricciones),
+           ingredientes: [
+                Ingrediente(nombre: "Brisket", cantidad: 1815, medida: .g),
+                Ingrediente(nombre: "Large red onion", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Garlic, minced", cantidad: 6, medida: .not),
+                Ingrediente(nombre: "Large Carrot", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Parsnip", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Stalks Celery", cantidad: 3, medida: .not),
+                Ingrediente(nombre: "Caul, Duck, or Chicken Fat", cantidad: 3, medida: .tbs),
+                Ingrediente(nombre: "Bay Leaves", cantidad: 2, medida: .not),
+                Ingrediente(nombre: "Apple Cider Vinegar", cantidad: 0.33, medida: .cups),
+                Ingrediente(nombre: "Red Wine", cantidad: 1, medida: .cups),
+                Ingrediente(nombre: "Jar/Can of Tomato Paste", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Spoonful of Honey", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Chicken Stock", cantidad: 30, medida: .ml),
+               ],
+           
+           preparaciones:  [
+                Preparacion(paso: "In a small bowl, combine the honey, tomato paste and wine, and mix into paste", opcional: false),
+                Preparacion(paso: "In an oval dutch oven, melt the fat over a medium to high heat.", opcional: false),
+                Preparacion(paso: "Sear the brisket on both side then remove the heat", opcional: false),
+                Preparacion(paso: "Add a bit more fat or vegetable oil and sear the vegetables until the onions become translucent", opcional: false),
+                Preparacion(paso: "Add the wine mixture, return the beef to the pot, add the chicken stock until it come 1/2 way up the beef", opcional: false),
+                Preparacion(paso: "Close the lid and bake at 250 until fork tender (4-6 hrs)", opcional: false)
+               ]
+    ),
+    
+    //Recipe 7
+    Recipe(recipeBasicInfo: RecipeBasicInfo(
+                            titulo: "Arroz con coco y guiso criollo",
+                            descripcion: "Slow cooked brisket in a savory braise that makes an amazing gravy.",
+                            cooker: "Deb Szajngarten",
+                            category: .cena,
+                            foodtype: .sinRestricciones),
+           ingredientes: [
+                Ingrediente(nombre: "Brisket", cantidad: 1815, medida: .g),
+                Ingrediente(nombre: "Large red onion", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Garlic, minced", cantidad: 6, medida: .not),
+                Ingrediente(nombre: "Large Carrot", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Parsnip", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Stalks Celery", cantidad: 3, medida: .not),
+                Ingrediente(nombre: "Caul, Duck, or Chicken Fat", cantidad: 3, medida: .tbs),
+                Ingrediente(nombre: "Bay Leaves", cantidad: 2, medida: .not),
+                Ingrediente(nombre: "Apple Cider Vinegar", cantidad: 0.33, medida: .cups),
+                Ingrediente(nombre: "Red Wine", cantidad: 1, medida: .cups),
+                Ingrediente(nombre: "Jar/Can of Tomato Paste", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Spoonful of Honey", cantidad: 1, medida: .not),
+                Ingrediente(nombre: "Chicken Stock", cantidad: 30, medida: .ml),
+               ],
+           
+           preparaciones:  [
+                Preparacion(paso: "In a small bowl, combine the honey, tomato paste and wine, and mix into paste", opcional: false),
+                Preparacion(paso: "In an oval dutch oven, melt the fat over a medium to high heat.", opcional: false),
+                Preparacion(paso: "Sear the brisket on both side then remove the heat", opcional: false),
+                Preparacion(paso: "Add a bit more fat or vegetable oil and sear the vegetables until the onions become translucent", opcional: false),
+                Preparacion(paso: "Add the wine mixture, return the beef to the pot, add the chicken stock until it come 1/2 way up the beef", opcional: false),
+                Preparacion(paso: "Close the lid and bake at 250 until fork tender (4-6 hrs)", opcional: false)
+           ]
+        )
+    ]
 }

@@ -1,7 +1,10 @@
 import Foundation
 
 //1. Modelo de una receta - Struct
-struct Recipe {
+// Después del view model y recipeslistview -> Recipe: Identifiable e Identifiable requiere var id = UUID()
+struct Recipe: Identifiable {
+    var id = UUID()
+    
     var recipeBasicInfo: RecipeBasicInfo
     var ingredientes: [Ingrediente]
     var preparaciones: [Preparacion]
