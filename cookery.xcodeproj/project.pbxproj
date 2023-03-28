@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C084615A29D303F800DA3FDF /* BackRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C084615929D303F800DA3FDF /* BackRecipes.swift */; };
 		C0A5501729CF933F00369E0A /* cookeryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5501629CF933F00369E0A /* cookeryApp.swift */; };
 		C0A5501929CF933F00369E0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5501829CF933F00369E0A /* ContentView.swift */; };
 		C0A5501B29CF934200369E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A5501A29CF934200369E0A /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C084615929D303F800DA3FDF /* BackRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackRecipes.swift; sourceTree = "<group>"; };
 		C0A5501329CF933F00369E0A /* cookery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cookery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A5501629CF933F00369E0A /* cookeryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cookeryApp.swift; sourceTree = "<group>"; };
 		C0A5501829CF933F00369E0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				C0A5504329D0AC3C00369E0A /* Recipe.swift */,
+				C084615929D303F800DA3FDF /* BackRecipes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C084615A29D303F800DA3FDF /* BackRecipes.swift in Sources */,
 				C0A5504429D0AC3C00369E0A /* Recipe.swift in Sources */,
 				C0A5501929CF933F00369E0A /* ContentView.swift in Sources */,
 				C0A5501729CF933F00369E0A /* cookeryApp.swift in Sources */,
