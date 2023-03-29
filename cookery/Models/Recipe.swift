@@ -66,9 +66,9 @@ struct Ingrediente {
     var cantidad: Double
     var medida: Medida //Unit
     
-//4. Construire una variable calculada para llamar de forma optimizada a los ingredientes.
+//4. Construire una propiedad variable calculada para llamar de forma optimizada a los ingredientes.
     
-    var description: String {
+    var descripcion: String {
         let formatearCantidad = String(format: "%g", cantidad)
         switch medida {
         case .not:

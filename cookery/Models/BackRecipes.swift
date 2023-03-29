@@ -5,23 +5,23 @@ extension Recipe {
     //Recipe 1
     Recipe(recipeBasicInfo: RecipeBasicInfo(
                             titulo: "Puré de Papas",
-                            descripcion: "Buttery salty mashed potatoes!",
-                            cooker: "Josh",
+                            descripcion: "Puré de Papas muy antojable!",
+                            cooker: "Jean Karel",
                             category: .cena,
-                            foodtype: .sinRestricciones),
+                            foodtype: .vegano),
            
            ingredientes: [
                 Ingrediente(nombre: "Potatoes", cantidad: 454, medida: .g),
-                Ingrediente(nombre: "Butter", cantidad: 1, medida: .tbs),
-                Ingrediente(nombre: "Milk", cantidad: 0.5, medida: .cups),
+                Ingrediente(nombre: "Soy Butter", cantidad: 1, medida: .tbs),
+                Ingrediente(nombre: "Soy Milk", cantidad: 0.5, medida: .cups),
                 Ingrediente(nombre: "Salt", cantidad: 2, medida: .tsp)
            ],
            
            preparaciones:  [
-                Preparacion(paso: "Put peeled potatoes in water and bring to boil ~15 min (once you can cut them easily", opcional: false),
-                Preparacion(paso: "In the meantime, Soften the butter by heading in a microwave for 30 seconds", opcional: false),
-                Preparacion(paso: "Drain the now soft potatoes", opcional: false),
-                Preparacion(paso: "Mix vigorously with milk, salt, and butter", opcional: false)
+                Preparacion(paso: "Paso 1: Put peeled potatoes in water and bring to boil ~15 min (once you can cut them easily.", opcional: false),
+                Preparacion(paso: "Paso 2: In the meantime, Soften the butter by heading in a microwave for 30 seconds.", opcional: false),
+                Preparacion(paso: "Paso 3: Drain the now soft potatoes.", opcional: false),
+                Preparacion(paso: "Paso 4: Mix vigorously with milk, salt, and butter.", opcional: false)
            ]
            
     ),
@@ -30,8 +30,8 @@ extension Recipe {
     Recipe(recipeBasicInfo: RecipeBasicInfo(
                             titulo: "Ensalada de Manzanas",
                             descripcion: "Light and refreshing summer salad made of beets, apples and fresh mint",
-                            cooker: "Deb Szajngarten",
-                            category: .almuerzo,
+                            cooker: "Soshaina Michaela",
+                            category: .cena,
                             foodtype: .fitness),
            
            ingredientes: [
@@ -59,9 +59,9 @@ extension Recipe {
     //Recipe 3
     Recipe(recipeBasicInfo: RecipeBasicInfo(
                             titulo: "Brisket a las brasas",
-                            descripcion: "Slow cooked brisket in a savory braise that makes an amazing gravy.",
-                            cooker: "Deb Szajngarten",
-                            category: .cena,
+                            descripcion: "Un Cortesito Brisket que te mueres!",
+                            cooker: "Camilita Quiroz",
+                            category: .almuerzo,
                             foodtype: .sinRestricciones),
            ingredientes: [
                 Ingrediente(nombre: "Brisket", cantidad: 1815, medida: .g),
@@ -92,10 +92,10 @@ extension Recipe {
     //Recipe 4
     Recipe(recipeBasicInfo: RecipeBasicInfo(
                             titulo: "Pollo a la parmesana",
-                            descripcion: "Slow cooked brisket in a savory braise that makes an amazing gravy.",
-                            cooker: "Deb Szajngarten",
-                            category: .cena,
-                            foodtype: .sinRestricciones),
+                            descripcion: "Pollo y parmesano nacieron para estar juntos!",
+                            cooker: "Annita la Huerfanita",
+                            category: .almuerzo,
+                            foodtype: .lowCarb),
            ingredientes: [
                 Ingrediente(nombre: "Brisket", cantidad: 1815, medida: .g),
                 Ingrediente(nombre: "Large red onion", cantidad: 1, medida: .not),
@@ -125,8 +125,8 @@ extension Recipe {
     //Recipe 5
     Recipe(recipeBasicInfo: RecipeBasicInfo(
                             titulo: "Salchipapa costeña",
-                            descripcion: "Slow cooked brisket in a savory braise that makes an amazing gravy.",
-                            cooker: "Deb Szajngarten",
+                            descripcion: "No solo son papas y salchichas, receta Epica!",
+                            cooker: "Chimera Ant",
                             category: .cena,
                             foodtype: .sinRestricciones),
            ingredientes: [
@@ -158,9 +158,9 @@ extension Recipe {
     //Recipe 6
     Recipe(recipeBasicInfo: RecipeBasicInfo(
                             titulo: "Mini tamales Tolimenses",
-                            descripcion: "Slow cooked brisket in a savory braise that makes an amazing gravy.",
-                            cooker: "Deb Szajngarten",
-                            category: .cena,
+                            descripcion: "Los tradicionales de Tolima pero minis",
+                            cooker: "Chefecito Lite",
+                            category: .desayuno,
                             foodtype: .sinRestricciones),
            ingredientes: [
                 Ingrediente(nombre: "Brisket", cantidad: 1815, medida: .g),
@@ -191,9 +191,9 @@ extension Recipe {
     //Recipe 7
     Recipe(recipeBasicInfo: RecipeBasicInfo(
                             titulo: "Arroz con coco y guiso criollo",
-                            descripcion: "Slow cooked brisket in a savory braise that makes an amazing gravy.",
-                            cooker: "Deb Szajngarten",
-                            category: .cena,
+                            descripcion: "Exquisito arroz tipico con salsita",
+                            cooker: "Antulast Cabbakie",
+                            category: .almuerzo,
                             foodtype: .sinRestricciones),
            ingredientes: [
                 Ingrediente(nombre: "Brisket", cantidad: 1815, medida: .g),
