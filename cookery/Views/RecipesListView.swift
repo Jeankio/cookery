@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct RecipesListView: View {
-    //Agregaré un @State para que la vista actualice cuando Model cambie. Trayendo a RecipeData (ViewModel)
-    @StateObject var recipeData = RecipeData()
+    //Agregaré un @State para que la vista actualice cuando Model cambie. Trayendo a RecipeData (ViewModel) -> cambi'o a Enviroment
+    @EnvironmentObject private var recipeData: RecipeData
+    let category: RecipeBasicInfo.Category
     
     private let colorDeFondo = Colores.fondo
     private let colorPrimario  = Colores.primario
@@ -28,23 +29,24 @@ struct RecipesListView: View {
         .navigationTitle(navigationTitle)
     }
 }
+
 // Cree algunas propiedades para mejorar el code.
-extension RecipesListView  {
-    var recipes: [Recipe] {
-        recipeData.recipes
-    }
-    var navigationTitle: String {
-        "Recetas"
-    }
+extension RecipesListView {
+  private var recipes: [Recipe] {
+      recipeData.recipes(for: category)
+  }
+ 
+  private var navigationTitle: String {
+    "Recetas de \(category.rawValue)"
+  }
 }
 
-
 struct RecipesListView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            RecipesListView()
-        }
-    }
+  static var previews: some View {
+    NavigationView {
+        RecipesListView(category: .desayuno)
+    }.environmentObject(RecipeData())
+  }
 }
 
 // VISTA DE RECETAS COMPLETA -> RECIPEDETAILSVIEW
