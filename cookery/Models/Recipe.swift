@@ -28,6 +28,10 @@ struct Recipe: Identifiable {
                   preparaciones: [])
     }// user init
     
+    //Impedir que el usuario cree recetas vacias
+    var isValid: Bool {
+        recipeBasicInfo.isValid && !ingredientes.isEmpty && !preparaciones.isEmpty
+    }
 } // Struct Recipe
 
 // 2. Puedo reacomodar las cosas:
@@ -57,6 +61,11 @@ struct RecipeBasicInfo {
         case lowCarb = "Low carb"
         case otros = "Otros"
     } // enum foodtype
+    
+    //Impedir que el usuario cree recetas vacias
+    var isValid: Bool {
+        !titulo.isEmpty && !descripcion.isEmpty && !cooker.isEmpty
+    }
 } // struct RecipeBasicInfo
 
 //3. Hare un struc para ingr y prep ya que son [] y necesito guardar mas info.
