@@ -19,37 +19,46 @@ struct RecipeCategoryView: View {
                 LazyVGrid(columns: columns, content: {
                     ForEach(RecipeBasicInfo.Category.allCases,
                             id: \.self) { category in
-                    // Precentando - conectando la lista de recetas a las categorias
-                     NavigationLink(
-                     destination: RecipesListView(category: category)
-                        .environmentObject(recipeData),
-                     label: {
-                         CategoryView(category: category)
-                             .underline()
-                        })
-                     .foregroundColor(.black)
+                        // Presentando - conectando la lista de recetas a las categorias
+                        NavigationLink(
+                            destination: RecipesListView(category: category)
+                                            .environmentObject(recipeData),
+                            label: {
+                                CategoryView(category: category)
+                                    //.underline()
+                            })
+                        .foregroundColor(.black)
                     }
                 })
                 .navigationTitle("Categorías")
-            } //Nview
-        } //Scrollview
+            } //Scview
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink(destination: CookerProfileView()) {
+                        Image(systemName: "person.circle")
+                            .foregroundColor(.black)
+                    }
+                    
+                }
+            } //Toolbar
+        } //Nview
     } //Body
 } // Struct RCV
 
 
 struct CategoryView: View {
-  let category: RecipeBasicInfo.Category
- 
-  var body: some View {
-    ZStack {
-      Image(category.rawValue)
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-        .opacity(0.50)
-      Text(category.rawValue)
-            .font(.title.bold())
-    } .padding()
-  }
+    let category: RecipeBasicInfo.Category
+    
+    var body: some View {
+        ZStack {
+            Image(category.rawValue)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .opacity(0.50)
+            Text(category.rawValue)
+                .font(.title.bold())
+        } .padding()
+    }
 }
 
 
