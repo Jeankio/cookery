@@ -23,7 +23,7 @@ struct Recipe: Identifiable {
             descripcion: "",
             cooker: "",
             category: .almuerzo,
-            foodtype: .sinRestricciones),
+            foodtype: .fitness),
                   ingredientes: [],
                   preparaciones: [])
     }// user init
@@ -54,7 +54,7 @@ struct RecipeBasicInfo {
     } // enum category
     
     enum FoodType: String, CaseIterable {
-        case sinRestricciones = "Sin restricciones"
+        case sinRestricciones = "Normal"
         case vegano = "Vegano"
         case fitness = "Fitness"
         case saludable = "Saludable"

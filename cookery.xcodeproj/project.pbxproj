@@ -11,6 +11,7 @@
 		C084615A29D303F800DA3FDF /* BackRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C084615929D303F800DA3FDF /* BackRecipes.swift */; };
 		C084617629D3978900DA3FDF /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C084617529D3978900DA3FDF /* RecipeData.swift */; };
 		C09607DE29E5EA9100180DC7 /* CookerProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09607DD29E5EA9100180DC7 /* CookerProfileView.swift */; };
+		C09607E029E705CE00180DC7 /* ModifyRecipeBasicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09607DF29E705CE00180DC7 /* ModifyRecipeBasicInfoView.swift */; };
 		C0A5501729CF933F00369E0A /* cookeryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5501629CF933F00369E0A /* cookeryApp.swift */; };
 		C0A5501929CF933F00369E0A /* RecipesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A5501829CF933F00369E0A /* RecipesListView.swift */; };
 		C0A5501B29CF934200369E0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0A5501A29CF934200369E0A /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 		C084615929D303F800DA3FDF /* BackRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackRecipes.swift; sourceTree = "<group>"; };
 		C084617529D3978900DA3FDF /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 		C09607DD29E5EA9100180DC7 /* CookerProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookerProfileView.swift; sourceTree = "<group>"; };
+		C09607DF29E705CE00180DC7 /* ModifyRecipeBasicInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyRecipeBasicInfoView.swift; sourceTree = "<group>"; };
 		C0A5501329CF933F00369E0A /* cookery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cookery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A5501629CF933F00369E0A /* cookeryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cookeryApp.swift; sourceTree = "<group>"; };
 		C0A5501829CF933F00369E0A /* RecipesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				C053CA0429DCB25800F79645 /* ModifyRecipeView.swift */,
+				C09607DF29E705CE00180DC7 /* ModifyRecipeBasicInfoView.swift */,
 			);
 			path = UserAddRecipesViews;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C09607E029E705CE00180DC7 /* ModifyRecipeBasicInfoView.swift in Sources */,
 				C084615A29D303F800DA3FDF /* BackRecipes.swift in Sources */,
 				C0EE244929D4A7C800E14245 /* Colores.swift in Sources */,
 				C0EE244729D4740600E14245 /* RecipeDetailsView.swift in Sources */,

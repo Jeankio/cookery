@@ -30,15 +30,27 @@ struct RecipeCategoryView: View {
                         .foregroundColor(.black)
                     }
                 })
-                .navigationTitle("Categorías")
+                .navigationTitle("¿Qué cocinarás hoy?")
             } //Scview
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .principal) {
+                    Text("Cookery")
+                        .font(.headline)
+                }
+                ToolbarItem(placement: .navigationBarLeading) {
                     NavigationLink(destination: CookerProfileView()) {
                         Image(systemName: "person.circle")
                             .foregroundColor(.black)
                     }
-                    
+                }
+                //PREGUNTAR
+                ToolbarItem (placement: .navigationBarTrailing) {
+                    Button(action: {
+                        //isPresenting = true
+                    }, label: {
+                        Image(systemName: "plus")
+                            .foregroundColor(.black)
+                    })
                 }
             } //Toolbar
         } //Nview
@@ -54,7 +66,8 @@ struct CategoryView: View {
             Image(category.rawValue)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .opacity(0.50)
+                .opacity(0.40)
+                .cornerRadius(15)
             Text(category.rawValue)
                 .font(.title.bold())
         } .padding()

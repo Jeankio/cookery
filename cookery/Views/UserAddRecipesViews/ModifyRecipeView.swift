@@ -23,7 +23,8 @@ struct ModifyRecipeView: View {
             .padding()
             switch selection {
             case .basicInfo:
-                Text("Info de la Receta")
+                //Para mostrar la visa de:
+                ModifyRecipeBasicInfoView(recipeBasicInfo: $recipe.recipeBasicInfo)
             case .ingredientes:
                 Text("Ingredientes de la Receta")
             case .preparacion:
