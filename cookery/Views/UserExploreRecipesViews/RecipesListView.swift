@@ -41,28 +41,10 @@ struct RecipesListView: View {
                     })
                 }
             })
+            // Encapsular
             // Sheet for new recipe
             .sheet(isPresented: $isPresenting, content: {
-                NavigationView {
-                    ModifyRecipeView(recipe: $newRecipe)
-                        .toolbar(content: {
-                            ToolbarItem(placement: .confirmationAction) {
-                                // comprobacion de receta completa (Hecho en recipe)
-                                if newRecipe.isValid {
-                                    Button("Agregar") {
-                                        recipeData.recipes.append(newRecipe)
-                                        isPresenting = false
-                                    }
-                                }
-                            }
-                            ToolbarItem(placement: .cancellationAction) {
-                                Button("Cancelar") {
-                                    isPresenting = false
-                                }
-                            }
-                        })
-                    .navigationTitle("Agrega una Receta")
-                }
+                ModifyRecipeView(recipe: $newRecipe, isPresenting: $isPresenting)
             })
         }
     }

@@ -12,6 +12,9 @@ struct RecipeCategoryView: View {
     //private var recipeData = RecipeData()
     @StateObject private var recipeData = RecipeData()
     
+    @State private var isPresenting = false
+    @State private var newRecipe = Recipe()
+    
     var body: some View {
         let columns = [GridItem()]
         NavigationView {
@@ -46,7 +49,7 @@ struct RecipeCategoryView: View {
                 //PREGUNTAR
                 ToolbarItem (placement: .navigationBarTrailing) {
                     Button(action: {
-                        //isPresenting = true
+                        isPresenting = true
                     }, label: {
                         Image(systemName: "plus")
                             .foregroundColor(.black)
@@ -54,6 +57,9 @@ struct RecipeCategoryView: View {
                 }
             } //Toolbar
         } //Nview
+        .sheet(isPresented: $isPresenting, content: {
+            ModifyRecipeView(recipe: $newRecipe, isPresenting: $isPresenting)
+        })
     } //Body
 } // Struct RCV
 
@@ -66,13 +72,30 @@ struct CategoryView: View {
             Image(category.rawValue)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .opacity(0.40)
+                //.opacity(0.40)
                 .cornerRadius(15)
-            Text(category.rawValue)
-                .font(.title.bold())
+            
+            VStack {
+                //Spacer()
+                HStack {
+                    //Spacer()
+                    Text(category.rawValue)
+                        .font(.title.bold())
+                        .padding()
+                        .background(Color.white.opacity(0.8))
+                        .cornerRadius(15)
+                }
+            }
         } .padding()
     }
 }
+
+
+// Func para encapsular .sheet 
+
+
+
+
 
 
 struct RecipeCategoryView_Previews: PreviewProvider {
