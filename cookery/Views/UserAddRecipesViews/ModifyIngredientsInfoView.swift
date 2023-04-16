@@ -8,18 +8,20 @@
 import SwiftUI
 
 struct ModifyIngredientsInfoView: View {
-    @State var ingrediente = Ingrediente(nombre: "",
-                                         cantidad: 0.0,
-                                         medida: .not)
+    @State var ingrediente = Ingrediente()
     // createAction para que haya forma de guardar los ingredientes
     let createAction: ((Ingrediente) -> Void)
     // Para dismissear el agregador de ingredientes
     @Environment(\.presentationMode) private var mode
     
+    private let listBackgroundColor = Colores.fondo
+    private let listTextColor = Colores.primario
+    
     var body: some View {
         VStack {
             Form {
                 TextField("Ingrediente", text: $ingrediente.nombre)
+                    .listRowBackground(listBackgroundColor)
                 Stepper(value: $ingrediente.cantidad, in: 0...1000, step: 0.5) {
                     HStack {
                         Text("Cantidad:")
@@ -28,7 +30,7 @@ struct ModifyIngredientsInfoView: View {
                                   formatter: NumberFormatter.decimal)
                         .keyboardType(.numbersAndPunctuation)
                     }
-                }
+                }.listRowBackground(listBackgroundColor)
                 Picker(selection: $ingrediente.medida, label:
                         HStack {
                     Text("Medida:")
@@ -38,7 +40,7 @@ struct ModifyIngredientsInfoView: View {
                     ForEach(Ingrediente.Medida.allCases, id: \.self) { medida in
                         Text(medida.rawValue)
                     }
-                }
+                }.listRowBackground(listBackgroundColor)
                 .pickerStyle(DefaultPickerStyle())
                 // Boton para guardar, tiene que ver con createAction
                 HStack {
@@ -50,8 +52,9 @@ struct ModifyIngredientsInfoView: View {
                         mode.wrappedValue.dismiss()
                     })
                     Spacer()
-                }
+                }.listRowBackground(listBackgroundColor)
             }
+            .foregroundColor(listTextColor)
         }
     }
 }

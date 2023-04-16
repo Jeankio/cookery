@@ -107,6 +107,16 @@ struct Ingrediente {
         var singularName: String { String(rawValue.dropLast()) }
     } // enum medida
     
+    init(nombre: String, cantidad: Double, medida: Medida) {
+        self.nombre = nombre
+        self.cantidad = cantidad
+        self.medida = medida
+    }
+    
+    init() {
+        self.init(nombre: "", cantidad: 0.0, medida: .not)
+    }
+    
 } // struct ingr
 
 struct Preparacion {

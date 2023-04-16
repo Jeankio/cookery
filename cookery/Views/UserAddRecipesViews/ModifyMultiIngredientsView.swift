@@ -10,7 +10,10 @@ import SwiftUI
 
 struct ModifyMultiIngredientsView: View {
     @Binding var ingredientes: [Ingrediente]
-
+    
+    private let listBackgroundColor = Colores.fondo
+    private let listTextColor = Colores.primario
+    
     var body: some View {
         VStack{
             // Adicionar ingrediente en el array de [Ingrediente]
@@ -25,6 +28,7 @@ struct ModifyMultiIngredientsView: View {
                     ForEach(ingredientes.indices, id: \.self) { index in
                         Text(ingredientes[index].descripcion)
                     }
+                    .listRowBackground(listBackgroundColor)
                 }
             }
             NavigationLink(
@@ -35,7 +39,7 @@ struct ModifyMultiIngredientsView: View {
             .foregroundColor(.blue)
             
             Spacer()
-        }
+        }.foregroundColor(listTextColor)
     }
 }
 
