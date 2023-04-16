@@ -27,10 +27,12 @@ struct ModifyRecipeView: View {
                 .padding()
                 switch selection {
                 case .basicInfo:
-                    //Para mostrar la visa de:
+                    //Para mostrar la vista de:
                     ModifyRecipeBasicInfoView(recipeBasicInfo: $recipe.recipeBasicInfo)
                 case .ingredientes:
-                    Text("Ingredientes de la Receta")
+                    //Mostar los ingredientes
+                    ModifyMultiIngredientsView(ingredientes: $recipe.ingredientes)
+                    //Text("Ingredientes de la Receta")
                 case .preparacion:
                     Text("Preparación de la Receta")
                 }
@@ -63,15 +65,6 @@ struct ModifyRecipeView: View {
         case preparacion
     }
 }
-
-
-
-
-
-
-
-
-
 
 
 struct ModifyRecipeView_Previews: PreviewProvider {
