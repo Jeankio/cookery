@@ -13,6 +13,8 @@ struct ModifyIngredientsInfoView: View {
                                          medida: .not)
     // createAction para que haya forma de guardar los ingredientes
     let createAction: ((Ingrediente) -> Void)
+    // Para dismissear el agregador de ingredientes
+    @Environment(\.presentationMode) private var mode
     
     var body: some View {
         VStack {
@@ -44,6 +46,8 @@ struct ModifyIngredientsInfoView: View {
                     Button("Guardar", action: {
                         createAction(ingrediente)
                         ingrediente = .init(nombre: "", cantidad: 0.0, medida: .not)
+                        // al guardar de oculta la sheet
+                        mode.wrappedValue.dismiss()
                     })
                     Spacer()
                 }
