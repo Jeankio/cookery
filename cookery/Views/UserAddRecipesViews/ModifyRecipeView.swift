@@ -1,9 +1,3 @@
-//
-//  ModifyRecipeView.swift
-//  cookery
-//
-//  Created by Jean Karel on 4/04/23.
-//
 
 import SwiftUI
 
@@ -31,10 +25,11 @@ struct ModifyRecipeView: View {
                     ModifyRecipeBasicInfoView(recipeBasicInfo: $recipe.recipeBasicInfo)
                 case .ingredientes:
                     //Mostar los ingredientes
-                    ModifyMultiIngredientsView(ingredientes: $recipe.ingredientes)
-                    //Text("Ingredientes de la Receta")
+                    ModifyComponentsView<Ingrediente, ModifyIngredientsInfoView>(components:                                                                              $recipe.ingredientes)
+                    //Text(Mostrar las preparaciones")
                 case .preparacion:
-                    Text("Preparación de la Receta")
+                    ModifyComponentsView<Preparacion, ModifyDirectionView>(components:
+                                                                            $recipe.preparaciones)
                 }
                 Spacer()
             }

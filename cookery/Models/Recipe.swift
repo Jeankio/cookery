@@ -70,7 +70,9 @@ struct RecipeBasicInfo {
 
 //3. Hare un struc para ingr y prep ya que son [] y necesito guardar mas info.
 
-struct Ingrediente {
+struct Ingrediente: RecipeComponent {
+    var description: String {""}
+    
     var nombre: String
     var cantidad: Double
     var medida: Medida //Unit
@@ -119,9 +121,20 @@ struct Ingrediente {
     
 } // struct ingr
 
-struct Preparacion {
+struct Preparacion: RecipeComponent {
+    var description: String {""}
+    
     var paso: String
     var opcional: Bool
+    //Para cumplir con RecipeComponen Preparacion tiene 2 inits igual que ingredient
+    init(paso: String, opcional: Bool) {
+        self.paso = paso
+        self.opcional = opcional
+    }
+    
+    init() {
+        self.init(paso: "", opcional: false)
+    }
 }// struct prep
 
 //5. BackRecipe file extension de Recipe: backRecipe

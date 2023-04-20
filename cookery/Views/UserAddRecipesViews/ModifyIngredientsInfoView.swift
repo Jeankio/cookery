@@ -1,16 +1,16 @@
-//
-//  ModifyIngredientsInfoView.swift
-//  cookery
-//
-//  Created by Jean Karel on 14/04/23.
-//
-
 import SwiftUI
 
-struct ModifyIngredientsInfoView: View {
-    @State var ingrediente = Ingrediente()
+struct ModifyIngredientsInfoView: ModifyComponentView {
+    @Binding var ingrediente: Ingrediente
     // createAction para que haya forma de guardar los ingredientes
     let createAction: ((Ingrediente) -> Void)
+    
+    //Init
+    init(component: Binding<Ingrediente>, createAction: @escaping (Ingrediente) -> Void) {
+        self._ingrediente = component
+        self.createAction = createAction
+    }
+    
     // Para dismissear el agregador de ingredientes
     @Environment(\.presentationMode) private var mode
     
@@ -71,10 +71,12 @@ extension NumberFormatter {
 
 
 struct ModifyIngredientsInfoView_Previews: PreviewProvider {
-   
+    @State static var emptyIngredient = Recipe.backRecipes[0].ingredientes[0]
     static var previews: some View {
-        ModifyIngredientsInfoView(createAction: { ingrediente in
-            
-        })
+        NavigationView {
+            ModifyIngredientsInfoView(component: $emptyIngredient) { ingrediente in
+                print(ingrediente)
+            }
+        }.navigationTitle("Agregar Ingrediente")
     }
 }
