@@ -20,33 +20,34 @@ struct RecipesListView: View {
     
     var body: some View {
         // Presentar modal -> toolbar
-        NavigationView {
-            List {
-                //Salía una error Recipe no identifiable. Voy a Recipe en Model.
-                // Conectamos RLView con RDView -> Change text por navlink, agregu'e como destino RDView
-                ForEach(recipes) { recipe in
-                    NavigationLink(recipe.recipeBasicInfo.titulo,
-                                   destination: RecipeDetailsView(recipe: recipe))
-                }
-                .listRowBackground(colorDeFondo)
-                .foregroundColor(colorPrimario)
+        List {
+            //Salía una error Recipe no identifiable. Voy a Recipe en Model.
+            // Conectamos RLView con RDView -> Change text por navlink, agregu'e como destino RDView
+            ForEach(recipes) { recipe in
+                NavigationLink(recipe.recipeBasicInfo.titulo,
+                               destination: RecipeDetailsView(recipe: binding(for: recipe)))
             }
-            .navigationTitle(navigationTitle)
-            .toolbar(content: {
-                ToolbarItem (placement: .navigationBarTrailing) {
-                    Button(action: {
-                        isPresenting = true
-                    }, label: {
-                        Image(systemName: "plus")
-                    })
-                }
-            })
-            // Encapsular
-            // Sheet for new recipe
-            .sheet(isPresented: $isPresenting, content: {
-                ModifyRecipeView(recipe: $newRecipe, isPresenting: $isPresenting)
-            })
+            .listRowBackground(colorDeFondo)
+            .foregroundColor(colorPrimario)
         }
+        .navigationTitle(navigationTitle)
+        .toolbar(content: {
+            ToolbarItem (placement: .navigationBarTrailing) {
+                Button(action: {
+                    isPresenting = true
+                }, label: {
+                    Image(systemName: "plus")
+                })
+            }
+        })
+        // Encapsular
+        // Sheet for new recipe
+        .sheet(isPresented: $isPresenting, content: {
+            NavigationView {
+                ModifyRecipeView(recipe: $newRecipe, isPresenting: $isPresenting)
+                    .navigationTitle("Agrega una Receta")
+            }
+        })
     }
 }
 
@@ -59,6 +60,13 @@ extension RecipesListView {
   private var navigationTitle: String {
     "Recetas de \(category.rawValue)"
   }
+    // Método para devolver un enalce binding
+    func binding(for recipe: Recipe) -> Binding<Recipe> {
+        guard let index = recipeData.index(of: recipe) else {
+            fatalError("Recete no encontrada")
+        }
+        return $recipeData.recipes[index]
+    }
 }
 
 struct RecipesListView_Previews: PreviewProvider {

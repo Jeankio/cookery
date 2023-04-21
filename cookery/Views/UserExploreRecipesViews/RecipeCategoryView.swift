@@ -58,7 +58,10 @@ struct RecipeCategoryView: View {
             } //Toolbar
         } //Nview
         .sheet(isPresented: $isPresenting, content: {
-            ModifyRecipeView(recipe: $newRecipe, isPresenting: $isPresenting)
+            NavigationView {
+                ModifyRecipeView(recipe: $newRecipe, isPresenting: $isPresenting)
+                    .navigationTitle("Agrega una Receta")
+            }
         })
     } //Body
 } // Struct RCV

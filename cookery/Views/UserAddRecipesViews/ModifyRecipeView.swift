@@ -10,47 +10,44 @@ struct ModifyRecipeView: View {
     @State private var selection = Selection.basicInfo
     
     var body: some View {
-        NavigationView{
-            VStack{
-                Picker("Select recipe component", selection: $selection) {
-                    Text("Receta").tag(Selection.basicInfo)
-                    Text("Ingredientes").tag(Selection.ingredientes)
-                    Text("Preparación").tag(Selection.preparacion)
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                switch selection {
-                case .basicInfo:
-                    //Para mostrar la vista de:
-                    ModifyRecipeBasicInfoView(recipeBasicInfo: $recipe.recipeBasicInfo)
-                case .ingredientes:
-                    //Mostar los ingredientes
-                    ModifyComponentsView<Ingrediente, ModifyIngredientsInfoView>(components:                                                                              $recipe.ingredientes)
-                    //Text(Mostrar las preparaciones")
-                case .preparacion:
-                    ModifyComponentsView<Preparacion, ModifyDirectionView>(components:
-                                                                            $recipe.preparaciones)
-                }
-                Spacer()
+        VStack{
+            Picker("Select recipe component", selection: $selection) {
+                Text("Receta").tag(Selection.basicInfo)
+                Text("Ingredientes").tag(Selection.ingredientes)
+                Text("Preparación").tag(Selection.preparacion)
             }
-            .toolbar(content: {
-                ToolbarItem(placement: .confirmationAction) {
-                    // comprobacion de receta completa (Hecho en recipe)
-                    if recipe.isValid {
-                        Button("Agregar") {
-                            recipeData.recipes.append(recipe)
-                            isPresenting = false
-                        }
-                    }
-                }
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancelar") {
+            .pickerStyle(SegmentedPickerStyle())
+            .padding()
+            switch selection {
+            case .basicInfo:
+                //Para mostrar la vista de:
+                ModifyRecipeBasicInfoView(recipeBasicInfo: $recipe.recipeBasicInfo)
+            case .ingredientes:
+                //Mostar los ingredientes
+                ModifyComponentsView<Ingrediente, ModifyIngredientsInfoView>(components:                                                                              $recipe.ingredientes)
+                //Text(Mostrar las preparaciones")
+            case .preparacion:
+                ModifyComponentsView<Preparacion, ModifyDirectionView>(components:
+                                                                        $recipe.preparaciones)
+            }
+            Spacer()
+        }
+        .toolbar(content: {
+            ToolbarItem(placement: .confirmationAction) {
+                // comprobacion de receta completa (Hecho en recipe)
+                if recipe.isValid {
+                    Button("Agregar") {
+                        recipeData.recipes.append(recipe)
                         isPresenting = false
                     }
                 }
-            })
-            .navigationTitle("Agrega una Receta")
-        }
+            }
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Cancelar") {
+                    isPresenting = false
+                }
+            }
+        })
     }
     
     

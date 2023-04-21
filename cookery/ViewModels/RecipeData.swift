@@ -8,12 +8,20 @@ class RecipeData: ObservableObject {
     @Published var recipes = Recipe.backRecipes
     
     func recipes(for category: RecipeBasicInfo.Category) -> [Recipe] {
-      var filteredRecipes = [Recipe]()
+        var filteredRecipes = [Recipe]()
         for recipe in recipes {
-        if recipe.recipeBasicInfo.category == category {
-          filteredRecipes.append(recipe)
+            if recipe.recipeBasicInfo.category == category {
+                filteredRecipes.append(recipe)
+            }
         }
-      }
         return filteredRecipes
+    }
+    // Método para devolver el indice de una recipe y poder editarla
+    
+    func index (of recipe: Recipe) -> Int? {
+        for i in recipes.indices {
+            return i
+        }
+        return nil
     }
 }

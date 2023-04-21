@@ -24,7 +24,7 @@ struct ModifyDirectionView: ModifyComponentView {
                 .listRowBackground(listBackgroundColor)
             HStack{
                 Spacer()
-                Button("Save") {
+                Button("Guardar") {
                     createAction(preparacion)
                     mode.wrappedValue.dismiss()
                 }

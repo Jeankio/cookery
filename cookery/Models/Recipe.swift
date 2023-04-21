@@ -71,11 +71,15 @@ struct RecipeBasicInfo {
 //3. Hare un struc para ingr y prep ya que son [] y necesito guardar mas info.
 
 struct Ingrediente: RecipeComponent {
-    var description: String {""}
+    var description: String {nombre}
     
     var nombre: String
     var cantidad: Double
     var medida: Medida //Unit
+    
+    static func singularName() -> String {
+        return "Ingrediente"
+    }
     
 //4. Construire una propiedad variable calculada para llamar de forma optimizada a los ingredientes.
     
@@ -122,7 +126,7 @@ struct Ingrediente: RecipeComponent {
 } // struct ingr
 
 struct Preparacion: RecipeComponent {
-    var description: String {""}
+    var description: String {paso}
     
     var paso: String
     var opcional: Bool
@@ -134,6 +138,14 @@ struct Preparacion: RecipeComponent {
     
     init() {
         self.init(paso: "", opcional: false)
+    }
+    
+    static func singularName() -> String {
+        return "Preparación"
+    }
+    
+    static func pluralName() -> String {
+        return "Preparaciones"
     }
 }// struct prep
 

@@ -1,15 +1,14 @@
 // CREACI'ON DE LA VIEW DONDE SE MUESTRAN LAS RECETAS Y SUS DETALLES
-//
-//
-//
-//
-//
+
 
 import SwiftUI
 
 struct RecipeDetailsView: View {
-    // Decalar'e un prop cons recipe de tipo Recipe
-    let recipe: Recipe
+    // Decalar'e un prop cons recipe de tipo Recipe: Cambio:
+    // Ahora es un binding creado en recipelistview: (Antes solo let)
+    @Binding var recipe: Recipe
+    //Prepararon edit boton y su view
+    @State private var isPresenting = false
     
     private let colorDeFondo = Colores.fondo
     private let colorPrimario  = Colores.primario
@@ -29,13 +28,13 @@ struct RecipeDetailsView: View {
                     .padding()
                 Spacer()
             }
-// Hare una lista para mostrar ingredientes y preparaci'on
+            // Hare una lista para mostrar ingredientes y preparaci'on
             List {
                 Section(header: Text("Ingredientes")) {
-           //Viene un ForEach: para iterar las recetas y mostrar
+                    //Viene un ForEach: para iterar las recetas y mostrar
                     ForEach(recipe.ingredientes.indices, id: \.self) { index in
                         let ingrediente = recipe.ingredientes[index]
-          //Hago uso de la propiedad (En Recipe) var calculada para llamar al los ingredientes.
+                        //Hago uso de la propiedad (En Recipe) var calculada para llamar al los ingredientes.
                         Text(ingrediente.descripcion)
                             .foregroundColor(colorPrimario)
                     }
@@ -49,6 +48,28 @@ struct RecipeDetailsView: View {
             }.listRowBackground(colorDeFondo)
         }
         .navigationTitle(recipe.recipeBasicInfo.titulo)
+        .toolbar {
+            ToolbarItem {
+                HStack {
+                    Button("Editar") {
+                        isPresenting = true
+                    }
+                }
+            }
+        }
+        .sheet(isPresented: $isPresenting) {
+            NavigationView {
+                ModifyRecipeView(recipe: $recipe, isPresenting: $isPresenting)
+                    .toolbar {
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Guardar") {
+                                isPresenting = false
+                            }
+                        }
+                    }
+                    .navigationTitle("Editar Receta")
+            }
+        }
     }
 }
 
@@ -62,7 +83,7 @@ struct RecipeDetailsView_Previews: PreviewProvider {
     @State static var recipe = Recipe.backRecipes[0]
     static var previews: some View {
         NavigationView {
-            RecipeDetailsView(recipe: recipe)
+            RecipeDetailsView(recipe: $recipe)
         }
     }
 }
