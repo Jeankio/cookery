@@ -2,6 +2,36 @@ import Foundation
 
 extension Recipe {
   static let backRecipes: [Recipe] = [
+    // Recipe 0
+    Recipe(recipeBasicInfo: RecipeBasicInfo(
+                            titulo: "Ensalada de Uvas ???",
+                            descripcion: "Light and refreshing summer salad made of beets, apples and fresh mint",
+                            cooker: "Soshaina Michaela",
+                            category: .cena,
+                            foodtype: .fitness),
+           
+           ingredientes: [
+                Ingrediente(nombre: "Large beets chopped into a large dice", cantidad: 3, medida: .not),
+                Ingrediente(nombre: "Large apples chopped into a large dice", cantidad: 2, medida: .not),
+                Ingrediente(nombre: "Lemon zest", cantidad: 0.5, medida: .tbs),
+                Ingrediente(nombre: "Lemon juice", cantidad: 1.5, medida: .tbs),
+                Ingrediente(nombre: "Olive Oil", cantidad: 1, medida: .tsp),
+                Ingrediente(nombre: "Salt and Pepper to taste", cantidad: 1, medida: .not)
+           ],
+           
+           preparaciones:  [
+                Preparacion(paso: "Cook the beets", opcional: false),
+                Preparacion(paso: "Sous vide the beets - To accomplish this, add beets to food safe plastic storage bags with apples, tsp of course stal and teaspoon of ground black pepper", opcional: true),
+                Preparacion(paso: "Then vacuum seal the bag of beets and submerge into 185F water until tender; if no vacuum seal, weigh them down so they submerge", opcional: true),
+                Preparacion(paso: "Alternately, you can steam the beets until tender or roast them in a 400F oven until tender", opcional: false),
+                Preparacion(paso: "Once cooked, the skins will come off quite easily (gloves are preferred)", opcional: false),
+                Preparacion(paso: "Wait until cooled completely, then cut beets into a medium dice", opcional: false),
+                Preparacion(paso: "Peel and medium dice the apples", opcional: false),
+                Preparacion(paso: "Chiffonade the mint", opcional: false),
+                Preparacion(paso: "Combine all ingredients with lemon juice and olive oil and serve", opcional: false)
+           ]
+    ),
+    
     //Recipe 1
     Recipe(recipeBasicInfo: RecipeBasicInfo(
                             titulo: "Puré de Papas",
