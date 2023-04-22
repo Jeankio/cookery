@@ -37,12 +37,12 @@ struct RecipeCategoryView: View {
                     Text("Cookery")
                         .font(.headline)
                 }
-                ToolbarItem(placement: .navigationBarLeading) {
+                /*ToolbarItem(placement: .navigationBarLeading) {
                     NavigationLink(destination: CookerProfileView()) {
                         Image(systemName: "person.circle")
                             .foregroundColor(.black)
                     }
-                }
+                }*/
                 //PREGUNTAR
                 ToolbarItem (placement: .navigationBarTrailing) {
                     Button(action: {
@@ -99,7 +99,9 @@ struct CategoryView: View {
 
 
 struct RecipeCategoryView_Previews: PreviewProvider {
+    @StateObject static var recipesi = RecipeData()
     static var previews: some View {
         RecipeCategoryView()
+            .environmentObject(recipesi)
     }
 }

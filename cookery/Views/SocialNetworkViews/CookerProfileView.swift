@@ -3,7 +3,7 @@
 import SwiftUI
 
 struct CookerProfileView: View {
-    @Environment(\.presentationMode) var presentationMode
+    //@Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
@@ -13,7 +13,7 @@ struct CookerProfileView: View {
                 name: "Magaly Gutierry",
                 subText: "Vegan Cooker"
             ).padding()
-                
+            
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -24,16 +24,17 @@ struct CookerProfileView: View {
                     .font(.headline)
             }
         }
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading:
-                                Button(action: {
-            presentationMode.wrappedValue.dismiss()
-        }) {
-            Image(systemName: "arrow.backward")
-                .foregroundColor(.black)
-                .imageScale(.large)
-        }
-        )
+        /*.navigationBarBackButtonHidden(true)
+         .navigationBarItems(leading:
+         Button(action: {
+         presentationMode.wrappedValue.dismiss()
+         }) {
+         Image(systemName: "arrow.backward")
+         .foregroundColor(.black)
+         .imageScale(.large)
+         }
+         )
+         }*/
     }
 }
 

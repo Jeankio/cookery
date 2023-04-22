@@ -21,17 +21,25 @@ struct RecipesListView: View {
     
     var body: some View {
         // Presentar modal -> toolbar
-        List {
-            //Salía una error Recipe no identifiable. Voy a Recipe en Model.
-            // Conectamos RLView con RDView -> Change text por navlink, agregu'e como destino RDView
-            ForEach(recipes) { recipe in
-                NavigationLink(recipe.recipeBasicInfo.titulo,
-                               destination: RecipeDetailsView(recipe: binding(for: recipe)))
+        VStack {
+            HStack {
+                Text(navigationTitle)
+                    .font(.largeTitle).bold()
+                Spacer()
+            }.padding(.leading)
+            List {
+                //Salía una error Recipe no identifiable. Voy a Recipe en Model.
+                // Conectamos RLView con RDView -> Change text por navlink, agregu'e como destino RDView
+                ForEach(recipes) { recipe in
+                    NavigationLink(recipe.recipeBasicInfo.titulo,
+                                   destination: RecipeDetailsView(recipe: binding(for: recipe)))
+                }
+                .listRowBackground(colorDeFondo)
+                .foregroundColor(colorPrimario)
             }
-            .listRowBackground(colorDeFondo)
-            .foregroundColor(colorPrimario)
         }
-        .navigationTitle(navigationTitle)
+        
+        //.navigationTitle(navigationTitle)
         .toolbar(content: {
             ToolbarItem (placement: .navigationBarTrailing) {
                 Button(action: {
@@ -76,7 +84,7 @@ extension RecipesListView {
       case let .singleCategory(category):
           return "\(category.rawValue) Recetas"
       case .favorites:
-          return "Recetas favoritas"
+          return "Mis recetas favoritas"
       }
   }
     
