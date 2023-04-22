@@ -23,7 +23,7 @@ class RecipeData: ObservableObject {
     }
     
     // Método para devolver el indice de una recipe y poder editarla
-    // Mejorado después
+    // Mejorado después:
     func index (of recipe: Recipe) -> Int? {
         return recipes.firstIndex(where: { $0.recipeBasicInfo.titulo == recipe.recipeBasicInfo.titulo })
     }

@@ -61,6 +61,8 @@ DestinationView.Component == Component {
                         components.move(fromOffsets: indices, toOffset: newOffset)
                     }
                 }
+                // Arregla el issue de agregar más components
+                NavigationLink("Agregar \(Component.singularName())", destination: addComponentView)
             }
         }
     }
