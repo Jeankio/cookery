@@ -10,7 +10,8 @@ import SwiftUI
 struct RecipesListView: View {
     //Agregaré un @State para que la vista actualice cuando Model cambie. Trayendo a RecipeData (ViewModel) -> cambi'o a Enviroment
     @EnvironmentObject private var recipeData: RecipeData
-    let category: RecipeBasicInfo.Category
+    //Antes category, ahora viewStyle para marcar favs
+    let viewStyle: ViewStyle
     // for modal
     @State private var isPresenting = false
     @State private var newRecipe = Recipe()
@@ -53,13 +54,31 @@ struct RecipesListView: View {
 
 // Cree algunas propiedades para mejorar el code.
 extension RecipesListView {
+//Enum para mostrar las recetas favoritas #6
+    enum ViewStyle {
+        case favorites
+        case singleCategory(RecipeBasicInfo.Category)
+    }
+    
   private var recipes: [Recipe] {
-      recipeData.recipes(for: category)
+      switch viewStyle {
+      case let .singleCategory(category):
+          return recipeData.recipes(for: category)
+      case .favorites:
+          return recipeData.favoriteRecipes
+      }
   }
  
   private var navigationTitle: String {
-    "Recetas de \(category.rawValue)"
+      switch viewStyle {
+      case let .singleCategory(category):
+          return "\(category.rawValue) Recetas"
+      case .favorites:
+          return "Recetas favoritas"
+      }
   }
+    
+    
     // Método para devolver un enalce binding
     func binding(for recipe: Recipe) -> Binding<Recipe> {
         guard let index = recipeData.index(of: recipe) else {
@@ -72,7 +91,7 @@ extension RecipesListView {
 struct RecipesListView_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
-        RecipesListView(category: .desayuno)
+        RecipesListView(viewStyle: .singleCategory(.desayuno))
     }.environmentObject(RecipeData())
   }
 }

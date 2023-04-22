@@ -22,11 +22,10 @@ struct RecipeCategoryView: View {
                             id: \.self) { category in
                         // Presentando - conectando la lista de recetas a las categorias
                         NavigationLink(
-                            destination: RecipesListView(category: category)
+                            destination: RecipesListView(viewStyle: .singleCategory(category))
                                             .environmentObject(recipeData),
                             label: {
                                 CategoryView(category: category)
-                                    //.underline()
                             })
                         .foregroundColor(.black)
                     }

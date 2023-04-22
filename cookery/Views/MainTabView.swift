@@ -11,7 +11,7 @@ struct MainTabView: View {
             RecipeCategoryView()
                 .tabItem { Label("Recetas", systemImage: "fork.knife.circle") }
             NavigationView {
-                RecipesListView(category: .desayuno)
+                RecipesListView(viewStyle: .favorites)
             }.tabItem{ Label("Favoritas", systemImage: "heart.fill") }
         }
         .environmentObject(recipeData)

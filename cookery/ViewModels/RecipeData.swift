@@ -16,8 +16,13 @@ class RecipeData: ObservableObject {
         }
         return filteredRecipes
     }
-    // Método para devolver el indice de una recipe y poder editarla
     
+    //Marcar recetas favoritas (prop computada) #5
+    var favoriteRecipes: [Recipe] {
+        recipes.filter { recipe in recipe.isFavorite }
+    }
+    
+    // Método para devolver el indice de una recipe y poder editarla
     func index (of recipe: Recipe) -> Int? {
         for i in recipes.indices {
             return i
