@@ -8,6 +8,8 @@ struct Recipe: Identifiable {
     var recipeBasicInfo: RecipeBasicInfo
     var ingredientes: [Ingrediente]
     var preparaciones: [Preparacion]
+    //hacer recetas favoritas #1
+    var isFavorite = false
     
     //6. Inicializador para crear recetas
     init(recipeBasicInfo: RecipeBasicInfo, ingredientes: [Ingrediente], preparaciones: [Preparacion]){

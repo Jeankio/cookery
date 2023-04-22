@@ -54,6 +54,12 @@ struct RecipeDetailsView: View {
                     Button("Editar") {
                         isPresenting = true
                     }
+                    //Marcar recetas como favoritas parte #2
+                    Button(action: {
+                        recipe.isFavorite.toggle()
+                    }) {
+                        Image(systemName: recipe.isFavorite ? "heart.fill" : "heart")
+                    }
                 }
             }
         }
@@ -67,7 +73,7 @@ struct RecipeDetailsView: View {
                             }
                         }
                     }
-                    .navigationTitle("Editar Receta")
+                .navigationTitle("Editar Receta")
             }
         }
     }

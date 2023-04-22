@@ -1,16 +1,14 @@
 //
-//
-//
-//
-//
-//
+
 
 import SwiftUI
 
 struct RecipeCategoryView: View {
     //Propiedad para acceder al model por medio del viewModel
     //private var recipeData = RecipeData()
-    @StateObject private var recipeData = RecipeData()
+    
+    //Marcar favoritos #4 como tab main ahora es principal entonces:
+    @EnvironmentObject private var recipeData: RecipeData
     
     @State private var isPresenting = false
     @State private var newRecipe = Recipe()
