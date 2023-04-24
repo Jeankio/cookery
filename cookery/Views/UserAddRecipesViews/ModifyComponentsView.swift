@@ -26,8 +26,8 @@ DestinationView.Component == Component {
     @Binding var components: [Component]
     @State private var newComponent = Component()
     
-    private let listBackgroundColor = Colores.fondo
-    private let listTextColor = Colores.primario
+    @AppStorage ("listBackgroundColor") private var listBackgroundColor = Colores.fondo
+    @AppStorage ("listTextColor") private var listTextColor = Colores.primario
     
     var body: some View {
         VStack {

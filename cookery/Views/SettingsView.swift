@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State private var hideOptionalSteps: Bool = false
+    //Antes:
+    //@State private var hideOptionalSteps: Bool = false
+    //Ahora:
+    @AppStorage("hideOptionalSteps") private var hideOptionalSteps: Bool = false
     //Antes:
     //@State private var listBackgroundColor = Colores.fondo
     //@State private var listTextColor = Colores.primario

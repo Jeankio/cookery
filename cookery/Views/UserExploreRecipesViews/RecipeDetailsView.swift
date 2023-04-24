@@ -4,6 +4,8 @@
 import SwiftUI
 
 struct RecipeDetailsView: View {
+    //Hecho settings view, replicarlo aquí
+    @AppStorage("hideOptionalSteps") private var hideOptionalSteps: Bool = false
     // Decalar'e un prop cons recipe de tipo Recipe: Cambio:
     // Ahora es un binding creado en recipelistview: (Antes solo let)
     @Binding var recipe: Recipe
@@ -43,6 +45,16 @@ struct RecipeDetailsView: View {
                     ForEach(recipe.preparaciones.indices, id: \.self) { index in
                         let preparacion = recipe.preparaciones[index]
                         Text(preparacion.paso)
+                        if preparacion.opcional && hideOptionalSteps {
+                            EmptyView()
+                        } else {
+                            HStack {
+                                //Traer la función de recipe index
+                                let index = recipe.index(of: preparacion, excludingOptionalDirections: hideOptionalSteps) ?? 0
+                                Text("\(index + 1). ").bold()
+                                Text("\(preparacion.opcional ? "(Opcional)" : "")\(preparacion.description)")
+                            }
+                        }
                     } .foregroundColor(colorPrimario)
                 }
             }.listRowBackground(colorDeFondo)
@@ -73,7 +85,7 @@ struct RecipeDetailsView: View {
                             }
                         }
                     }
-                .navigationTitle("Editar Receta")
+                    .navigationTitle("Editar Receta")
             }
         }
     }

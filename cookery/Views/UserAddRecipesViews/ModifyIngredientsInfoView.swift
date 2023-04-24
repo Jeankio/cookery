@@ -14,8 +14,8 @@ struct ModifyIngredientsInfoView: ModifyComponentView {
     // Para dismissear el agregador de ingredientes
     @Environment(\.presentationMode) private var mode
     
-    private let listBackgroundColor = Colores.fondo
-    private let listTextColor = Colores.primario
+    @AppStorage ("listBackgroundColor") private var listBackgroundColor = Colores.fondo
+    @AppStorage ("listTextColor") private var listTextColor = Colores.primario
     
     var body: some View {
         VStack {

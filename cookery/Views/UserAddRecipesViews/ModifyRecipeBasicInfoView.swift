@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ModifyRecipeBasicInfoView: View {
-    private let listBackgroundColor = Colores.fondo
-    private let listTextColor = Colores.primario
+    @AppStorage ("listBackgroundColor") private var listBackgroundColor = Colores.fondo
+    @AppStorage ("listTextColor") private var listTextColor = Colores.primario
     
     @Binding var recipeBasicInfo: RecipeBasicInfo
     

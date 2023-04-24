@@ -34,6 +34,12 @@ struct Recipe: Identifiable {
     var isValid: Bool {
         recipeBasicInfo.isValid && !ingredientes.isEmpty && !preparaciones.isEmpty
     }
+    //Funcion para obtener los indices correctos cuando el paso es Opcional real
+    func index(of direction: Preparacion, excludingOptionalDirections: Bool) -> Int? {
+        let preparaciones = preparaciones.filter { excludingOptionalDirections ? !$0.opcional : true }
+        let index = preparaciones.firstIndex { $0.description == direction.description }
+        return index
+      }
 } // Struct Recipe
 
 // 2. Puedo reacomodar las cosas:
