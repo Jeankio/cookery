@@ -15,7 +15,10 @@ struct MainTabView: View {
                     CookerProfileView()
                     RecipesListView(viewStyle: .favorites)
                 }.padding(.bottom, 280)
-            }.tabItem{ Label("Favoritas", systemImage: "heart.fill") }
+            }.tabItem{ Label("Perfil", systemImage: "person.crop.circle.fill") }
+            // SE AGREGÓ PARA ACCEDER A LOS SETTINGS O AJUSTES
+            SettingsView()
+                    .tabItem { Label("Ajustes", systemImage: "gear") }
         }
         .environmentObject(recipeData)
     }

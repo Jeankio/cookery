@@ -53,7 +53,7 @@ struct RecipeCategoryView: View {
                     })
                 }
             } //Toolbar
-        } //Nview
+        }.navigationViewStyle(.stack) //Nview
         .sheet(isPresented: $isPresenting, content: {
             NavigationView {
                 ModifyRecipeView(recipe: $newRecipe, isPresenting: $isPresenting)
