@@ -9,26 +9,31 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var hideOptionalSteps: Bool = false
-    @State private var listBackgroundColor = Colores.fondo
-    @State private var listTextColor = Colores.primario
- 
-  var body: some View {
-    NavigationView {
-      Form {
-        ColorPicker("Color de la Lista", selection: $listBackgroundColor)
-          .padding()
-          .listRowBackground(listBackgroundColor)
-        ColorPicker("Color del texto", selection: $listTextColor)
-          .padding()
-          .listRowBackground(listBackgroundColor)
-        Toggle("Ocultar pasos opcionales", isOn: $hideOptionalSteps)
-          .padding()
-          .listRowBackground(listBackgroundColor)
-      }
-      .foregroundColor(listTextColor)
-      .navigationTitle("Ajustes")
+    //Antes:
+    //@State private var listBackgroundColor = Colores.fondo
+    //@State private var listTextColor = Colores.primario
+    
+    //Ahora, por lo que pasó en colores:
+    @AppStorage("listBackgroundColor") private var listBackgroundColor = Colores.fondo
+    @AppStorage("listTextColor") private var listTextColor = Colores.primario
+    
+    var body: some View {
+        NavigationView {
+            Form {
+                ColorPicker("Color de la Lista", selection: $listBackgroundColor)
+                    .padding()
+                    .listRowBackground(listBackgroundColor)
+                ColorPicker("Color del texto", selection: $listTextColor)
+                    .padding()
+                    .listRowBackground(listBackgroundColor)
+                Toggle("Ocultar pasos opcionales", isOn: $hideOptionalSteps)
+                    .padding()
+                    .listRowBackground(listBackgroundColor)
+            }
+            .foregroundColor(listTextColor)
+            .navigationTitle("Ajustes")
+        }
     }
-  }
 }
 
 struct SettingsView_Previews: PreviewProvider {
