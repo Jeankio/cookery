@@ -1,6 +1,6 @@
 import SwiftUI
 //Protocol con inici vacio
-protocol RecipeComponent: CustomStringConvertible {
+protocol RecipeComponent: CustomStringConvertible, Codable {
     init()
     // para hacer que cada componente tenga su nombre (Ing y prep)
     static func singularName() -> String

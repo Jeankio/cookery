@@ -38,6 +38,7 @@ struct ModifyRecipeView: View {
                 if recipe.isValid {
                     Button("Agregar") {
                         recipeData.recipes.append(recipe)
+                        recipeData.saveRecipes()
                         isPresenting = false
                     }
                 }

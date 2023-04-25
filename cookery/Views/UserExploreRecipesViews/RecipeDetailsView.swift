@@ -1,6 +1,4 @@
 // CREACI'ON DE LA VIEW DONDE SE MUESTRAN LAS RECETAS Y SUS DETALLES
-
-
 import SwiftUI
 
 struct RecipeDetailsView: View {
@@ -11,6 +9,7 @@ struct RecipeDetailsView: View {
     @Binding var recipe: Recipe
     //Prepararon edit boton y su view
     @State private var isPresenting = false
+    @EnvironmentObject private var recipeData: RecipeData
     
     private let colorDeFondo = Colores.fondo
     private let colorPrimario  = Colores.primario
@@ -82,6 +81,7 @@ struct RecipeDetailsView: View {
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Guardar") {
                                 isPresenting = false
+                                recipeData.saveRecipes()
                             }
                         }
                     }
@@ -90,6 +90,7 @@ struct RecipeDetailsView: View {
         }
     }
 }
+
 
 
 

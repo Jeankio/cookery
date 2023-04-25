@@ -21,6 +21,10 @@ struct MainTabView: View {
                     .tabItem { Label("Ajustes", systemImage: "gear") }
         }
         .environmentObject(recipeData)
+        // Persistence #7
+        .task {
+            recipeData.loadRecipes()
+        }
     }
 }
 
